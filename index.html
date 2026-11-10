@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Fredoka:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>GEOFAELO</title>
+</head>
+
+<body>
+  <header>
+    <button id="voltar" class="voltar">🠔 Voltar</button>
+    <h1>GEOFAELO</h1>
+  </header>
+  <main class="grade-modos">
+        
+    <div id="modo_1" class="modo_1">
+      <img src="imagens/mapa-mundi-og.webp" alt="mapa-mundi">
+      <h2>Descubra o País pelo mapa</h2>
+       <button data-mode="pais" id="iniciar-1" class="iniciar">Iniciar</button>
+       <button id="ranking1" data-mode="pais" class="ranking">ranking</button>
+    </div>
+
+    <div id="modo_2" class="modo_2">
+      <img src="imagens/bandeiras.png" alt="várias bandeiras">
+      <h2>Descubra a Bandeira</h2>
+       <button data-mode="bandeira" id="iniciar-2" class="iniciar">Iniciar</button>
+       <button id="ranking2" data-mode="bandeira" class="ranking">ranking</button>
+    </div>
+
+    <div id="modo_3" class="modo_3">
+      <img src="imagens/captais.avif" alt="mapa da América do Sul com suas capitais">
+      <h2>Descubra a Capital</h2>
+       <button data-mode="capital" id="iniciar-3" class="iniciar">Iniciar</button>
+       <button id="ranking3" data-mode="capital" class="ranking">ranking</button>
+    </div>
+
+    <div id="modo_4" class="modo_4">
+      <img src="imagens/pib_comparacao.jpg" alt="bandeira dos Estados Unidos e bandeira do Brasil">
+      <h2>Descubra qual país possui o maior Pib</h2>
+       <button data-mode="rico" id="iniciar-4" class="iniciar">Iniciar</button>
+       <button id="ranking4" data-mode="rico" class="ranking">ranking</button>
+    </div>
+
+    <div id="modo_5" class="modo_5">
+      <img src="imagens/russia.jpg" alt="Mapa mundi com a Rússia destacada">
+      <h2>Descubra qual é o maior país</h2>
+       <button data-mode="maior" id="iniciar-5" class="iniciar">Iniciar</button>
+       <button id="ranking5"  data-mode="maior" class="ranking">ranking</button>
+    </div>
+
+    <div id="modo_6" class="modo_6">
+      <img src="imagens/fronteiras.jpg" alt="mapa da América do sul com os vizinhos do Brasil destacados">
+      <h2>Descubra os vizinhos desse país</h2>
+       <button data-mode="vizinhos" id="iniciar-6" class="iniciar">Iniciar</button>
+       <button id="ranking6" data-mode="vizinhos" class="ranking">ranking</button>
+    </div>
+
+    <div id="modo_7" class="modo_7">
+      <img src="imagens/continente.webp" alt="mapa mundi com os nomes dos continentes">
+      <h2>Descubra qual país faz parte do continente</h2>
+       <button data-mode="continente" id="iniciar-7" class="iniciar">Iniciar</button>
+       <button id="ranking7" data-mode="continente" class="ranking">ranking</button>
+    </div>
+
+    <div id="modo_8" class="modo_8">
+      <img src="imagens/india.jpg" alt="mapa mundi com a Índia destacada">
+      <h2>Descubra qual país é mais populoso</h2>
+       <button data-mode="populacao" id="iniciar-8" class="iniciar">Iniciar</button>
+       <button id="ranking8" data-mode="populacao" class="ranking">ranking</button>
+    </div>
+
+  </main>
+  <footer>
+    <p>Direitos Reservados</p>
+  </footer>
+
+  
+<div id="configuracao" class="fundo-configuracao">
+
+    <div class="card-configuracao">
+
+        <button id="fecharConfig" class="fechar">✕</button>
+
+        <h2>Quantas rodadas?</h2>
+        <p>Escolha a duração da sua partida</p>
+
+        <div class="opcoes-rodadas">
+            <button class="rodada selecionada" data-rodadas="10">10 rodadas</button>
+            <button class="rodada" data-rodadas="20">20 rodadas</button>
+            <button class="rodada" data-rodadas="30">30 rodadas</button>
+            <button class="rodada" data-rodadas="50">50 rodadas</button>
+            <button class="rodada" data-rodadas="80">80 rodadas</button>
+            <button class="rodada" data-rodadas="195">Todos os países</button>
+        </div>
+
+        <button id="comecar">Começar partida</button>
+
+    </div>
+
+</div>
+
+
+</body>
+
+</html>

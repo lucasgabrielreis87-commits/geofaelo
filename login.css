@@ -1,0 +1,240 @@
+/* =========================================
+   GEOFAELO — LOGIN SOFT UI DESIGN
+   ========================================= */
+
+:root {
+    --fundo: #e9edf5;
+    --superficie: #e9edf5;
+
+    --texto: #303b50;
+    --texto-secundario: #7c879c;
+
+    --azul: #6488e8;
+    --azul-escuro: #4d70d0;
+    --azul-claro: #8eabff;
+
+    --sombra-clara: #ffffff;
+    --sombra-escura: #c8cedb;
+
+    --raio-card: 24px;
+    --raio-botao: 14px;
+
+    --sombra-card:
+        9px 9px 18px var(--sombra-escura),
+        -9px -9px 18px var(--sombra-clara);
+
+    --sombra-interna:
+        inset 4px 4px 8px var(--sombra-escura),
+        inset -4px -4px 8px var(--sombra-clara);
+}
+
+/* ---------- Reset geral ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 20px;
+
+    background: var(--fundo);
+    color: var(--texto);
+
+    font-family: "Nunito", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Título ---------- */
+
+body::before {
+    content: "GEOFAELO";
+
+    display: block;
+    margin-bottom: 40px;
+
+    font-family: "Fredoka", sans-serif;
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    font-weight: 600;
+    letter-spacing: 5px;
+
+    color: var(--azul);
+
+    text-shadow:
+        2px 2px 3px var(--sombra-escura),
+        -1px -1px 2px var(--sombra-clara);
+}
+
+/* ---------- Área dos formulários ---------- */
+
+body {
+    gap: 0;
+}
+
+form {
+    width: 100%;
+    max-width: 380px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    padding: 30px;
+
+    background: var(--superficie);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: var(--raio-card);
+
+    box-shadow: var(--sombra-card);
+}
+
+/* Espaçamento entre os cards */
+
+#form2 {
+    margin-top: 30px;
+}
+
+/* ---------- Títulos dos formulários ---------- */
+
+form::before {
+    font-family: "Fredoka", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    color: var(--texto);
+
+    margin-bottom: 5px;
+}
+
+#form1::before {
+    content: "Entrar";
+}
+
+#form2::before {
+    content: "Criar conta";
+}
+
+/* ---------- Campos de entrada ---------- */
+
+input {
+    width: 100%;
+    min-height: 50px;
+
+    padding: 14px 16px;
+
+    border: none;
+    outline: none;
+    border-radius: var(--raio-botao);
+
+    background: var(--fundo);
+    color: var(--texto);
+
+    font-family: "Nunito", sans-serif;
+    font-size: 1rem;
+
+    box-shadow: var(--sombra-interna);
+
+    transition:
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+input::placeholder {
+    color: var(--texto-secundario);
+}
+
+input:focus {
+    box-shadow:
+        inset 2px 2px 5px var(--sombra-escura),
+        inset -2px -2px 5px var(--sombra-clara),
+        0 0 0 2px var(--azul-claro);
+}
+
+/* ---------- Botões ---------- */
+
+form button {
+    width: 100%;
+    min-height: 48px;
+
+    padding: 13px 20px;
+
+    border: none;
+    border-radius: var(--raio-botao);
+
+    background: var(--azul);
+    color: white;
+
+    font-family: "Nunito", sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    box-shadow:
+        4px 4px 8px rgba(130, 145, 180, 0.45),
+        -3px -3px 7px rgba(255, 255, 255, 0.65);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+form button:hover {
+    background: var(--azul-escuro);
+    transform: translateY(-2px);
+}
+
+form button:active {
+    transform: translateY(1px);
+
+    box-shadow:
+        inset 3px 3px 6px rgba(40, 60, 120, 0.25),
+        inset -2px -2px 5px rgba(255, 255, 255, 0.15);
+}
+
+form button:focus-visible {
+    outline: 3px solid var(--azul-claro);
+    outline-offset: 4px;
+}
+
+/* ---------- Responsividade ---------- */
+
+@media (max-width: 480px) {
+    body {
+        padding: 25px 20px;
+    }
+
+    body::before {
+        margin-bottom: 30px;
+        font-size: 2.5rem;
+        letter-spacing: 3px;
+    }
+
+    form {
+        padding: 24px;
+    }
+
+    #form2 {
+        margin-top: 24px;
+    }
+}
+
+/* ---------- Acessibilidade ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}

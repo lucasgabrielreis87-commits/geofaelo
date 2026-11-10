@@ -1,0 +1,112 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #e9edf5;
+    font-family: 'Nunito', sans-serif;
+    padding: 50px 20px;
+}
+
+/* Título */
+
+.titulo {
+    font-family: 'Fredoka', sans-serif;
+    color: #34466b;
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+/* Tabela */
+
+table {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+/* Cabeçalho */
+
+th {
+    padding: 16px 22px;
+    color: #6488e8;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Dados */
+
+td {
+    padding: 18px 22px;
+    text-align: center;
+    background-color: #ffffff;
+    color: #465674;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* Bordas arredondadas */
+
+td:first-child {
+    border-radius: 12px 0 0 12px;
+}
+
+td:last-child {
+    border-radius: 0 12px 12px 0;
+}
+
+/* Posição */
+
+tbody td:first-child {
+    color: #6488e8;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 20px;
+}
+
+/* Efeito ao passar o mouse */
+
+tbody tr {
+    transition: transform 0.2s ease;
+}
+
+tbody tr:hover {
+    transform: scale(1.01);
+}
+
+tbody tr:hover td {
+    background-color: #f5f7ff;
+}
+
+/* Responsividade */
+
+@media (max-width: 600px) {
+    body {
+        padding: 35px 12px;
+    }
+
+    .titulo {
+        font-size: 25px;
+    }
+
+    th {
+        font-size: 12px;
+        padding: 12px 5px;
+    }
+
+    td {
+        font-size: 13px;
+        padding: 14px 5px;
+    }
+}

@@ -1,0 +1,411 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap');
+
+/* ========================================
+   GEOFAELO — COMPARAÇÃO
+======================================== */
+
+:root {
+    --fundo: #e9edf5;
+    --superficie: #e9edf5;
+
+    --texto: #303b50;
+    --texto-secundario: #7c879c;
+
+    --azul: #6488e8;
+    --azul-escuro: #4d70d0;
+    --azul-claro: #8eabff;
+
+    --sombra-clara: #ffffff;
+    --sombra-escura: #c8cedb;
+
+    --sombra-card:
+        7px 7px 14px var(--sombra-escura),
+        -7px -7px 14px var(--sombra-clara);
+
+    --sombra-interna:
+        inset 4px 4px 8px var(--sombra-escura),
+        inset -4px -4px 8px var(--sombra-clara);
+}
+
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: min(850px, calc(100% - 36px));
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 25px 0 35px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: var(--fundo);
+    color: var(--texto);
+
+    font-family: "Nunito", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ========================================
+   IDENTIDADE GEOFAELO
+======================================== */
+
+body::before {
+    content: "GEOFAELO";
+
+    margin-bottom: 20px;
+
+    font-family: "Fredoka", sans-serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+
+    color: var(--azul);
+
+    text-shadow:
+        2px 2px 3px var(--sombra-escura),
+        -1px -1px 2px var(--sombra-clara);
+}
+
+/* ========================================
+   BOTÃO VOLTAR
+======================================== */
+
+.voltar {
+    position: absolute;
+    top: 22px;
+    left: 22px;
+
+    padding: 9px 15px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: var(--superficie);
+    color: var(--texto);
+
+    font-family: "Nunito", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        4px 4px 9px var(--sombra-escura),
+        -4px -4px 9px var(--sombra-clara);
+
+    transition: 0.2s ease;
+}
+
+.voltar:hover {
+    color: var(--azul);
+    transform: translateY(-2px);
+}
+
+.voltar:active {
+    box-shadow: var(--sombra-interna);
+}
+
+/* ========================================
+   CONTADORES
+======================================== */
+
+.contador,
+.acertos {
+    width: 175px;
+    padding: 10px 15px;
+
+    margin-bottom: 12px;
+
+    border-radius: 13px;
+
+    background: var(--superficie);
+    box-shadow: var(--sombra-card);
+
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 800;
+}
+
+.contador {
+    color: var(--texto);
+}
+
+.acertos {
+    color: var(--azul);
+}
+
+/* ========================================
+   TÍTULO
+======================================== */
+
+.titulo {
+    width: 100%;
+    max-width: 650px;
+
+    margin: 18px 0 28px;
+
+    font-family: "Fredoka", sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 500;
+
+    text-align: center;
+    line-height: 1.3;
+
+    color: var(--texto);
+}
+
+/* ========================================
+   ÁREA DE COMPARAÇÃO
+======================================== */
+
+body > div {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    align-items: stretch;
+    gap: 25px;
+}
+
+/* ========================================
+   CARTÕES DOS PAÍSES
+======================================== */
+
+.opcao {
+    width: 100%;
+    min-width: 0;
+    min-height: 230px;
+
+    padding: 20px 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    border: 2px solid transparent;
+    border-radius: 20px;
+
+    background: var(--superficie);
+    color: #355b49;
+
+    font-family: "Nunito", sans-serif;
+
+    cursor: pointer;
+
+    box-shadow: var(--sombra-card);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+/* ========================================
+   MAPAS DOS PAÍSES
+======================================== */
+
+.opcao img {
+    display: block;
+
+    width: 100%;
+    max-width: 180px;
+    height: 115px;
+
+    object-fit: contain;
+
+    pointer-events: none;
+}
+
+/* ========================================
+   NOMES DOS PAÍSES
+======================================== */
+
+.opcao p {
+    max-width: 100%;
+
+    font-family: "Fredoka", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+
+    text-align: center;
+    overflow-wrap: anywhere;
+
+    color: var(--texto);
+}
+
+/* ========================================
+   EFEITOS DOS CARTÕES
+======================================== */
+
+.opcao:hover:not(:disabled) {
+    transform: translateY(-4px);
+
+    box-shadow:
+        9px 9px 17px var(--sombra-escura),
+        -9px -9px 17px var(--sombra-clara);
+}
+
+.opcao:active:not(:disabled) {
+    transform: translateY(1px);
+    box-shadow: var(--sombra-interna);
+}
+
+.opcao:focus-visible {
+    outline: 3px solid var(--azul-claro);
+    outline-offset: 4px;
+}
+
+/* ========================================
+   RESPOSTAS
+======================================== */
+
+/*
+   Não estilizamos visualmente .correto,
+   pois o JavaScript adiciona essa classe
+   antes de o jogador responder.
+*/
+
+.opcao.correto {
+    border-color: transparent;
+}
+
+/* Botões desabilitados */
+
+.opcao:disabled {
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ========================================
+   RESULTADO FINAL
+======================================== */
+
+body > div > p {
+    grid-column: 1 / -1;
+
+    width: 100%;
+    padding: 30px 20px;
+
+    border-radius: 20px;
+
+    background: var(--superficie);
+    box-shadow: var(--sombra-interna);
+
+    font-family: "Fredoka", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+
+    color: var(--azul);
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 600px) {
+
+    body {
+        width: calc(100% - 28px);
+        padding-top: 85px;
+    }
+
+    body::before {
+        font-size: 1.9rem;
+        margin-bottom: 15px;
+    }
+
+    .voltar {
+        top: 15px;
+        left: 14px;
+    }
+
+    .titulo {
+        font-size: 1.5rem;
+        margin: 15px 0 22px;
+    }
+
+    body > div {
+        gap: 14px;
+    }
+
+    .opcao {
+        min-height: 190px;
+        padding: 15px 9px;
+        gap: 12px;
+
+        border-radius: 16px;
+    }
+
+    .opcao img {
+        max-width: 140px;
+        height: 95px;
+    }
+
+    .opcao p {
+        font-size: 1.05rem;
+    }
+
+    .contador,
+    .acertos {
+        width: 155px;
+        padding: 9px;
+        font-size: 0.85rem;
+    }
+
+    body > div > p {
+        font-size: 1.25rem;
+    }
+}
+
+/* ========================================
+   TELAS MUITO PEQUENAS
+======================================== */
+
+@media (max-width: 360px) {
+
+    body > div {
+        gap: 10px;
+    }
+
+    .opcao {
+        min-height: 165px;
+        padding: 12px 7px;
+    }
+
+    .opcao img {
+        height: 80px;
+    }
+
+    .opcao p {
+        font-size: 0.9rem;
+    }
+}
+
+/* ========================================
+   ACESSIBILIDADE
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}

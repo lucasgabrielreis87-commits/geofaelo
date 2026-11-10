@@ -1,0 +1,596 @@
+
+/* =========================================
+   GEOFAELO — MENU PRINCIPAL
+   Estilo Neumorphism / Soft UI
+   ========================================= */
+
+:root {
+    --fundo: #e9edf5;
+    --superficie: #e9edf5;
+
+    --texto: #303b50;
+    --texto-secundario: #7c879c;
+
+    --azul: #6488e8;
+    --azul-escuro: #4d70d0;
+    --azul-claro: #8eabff;
+
+    --sombra-clara: #ffffff;
+    --sombra-escura: #c8cedb;
+
+    --raio-card: 24px;
+    --raio-botao: 14px;
+
+    --sombra-card:
+        9px 9px 18px var(--sombra-escura),
+        -9px -9px 18px var(--sombra-clara);
+
+    --sombra-interna:
+        inset 4px 4px 8px var(--sombra-escura),
+        inset -4px -4px 8px var(--sombra-clara);
+}
+
+/* ---------- Reset ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 30px 40px;
+
+    background: var(--fundo);
+    color: var(--texto);
+
+    font-family: "Nunito", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Cabeçalho ---------- */
+
+header {
+    width: 100%;
+    max-width: 1450px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    margin-bottom: 45px;
+}
+
+header h1 {
+    font-family: "Fredoka", sans-serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 600;
+    letter-spacing: 5px;
+
+    color: var(--azul);
+
+    text-shadow:
+        2px 2px 3px var(--sombra-escura),
+        -1px -1px 2px var(--sombra-clara);
+}
+
+/* ---------- Botão voltar ---------- */
+
+.voltar {
+    position: absolute;
+    left: 0;
+
+    padding: 12px 20px;
+
+    border: none;
+    border-radius: var(--raio-botao);
+
+    background: var(--superficie);
+    color: var(--texto);
+
+    font-family: "Nunito", sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow: var(--sombra-card);
+
+    transition: 0.2s ease;
+}
+
+.voltar:hover {
+    color: var(--azul);
+    transform: translateY(-2px);
+}
+
+.voltar:active {
+    box-shadow: var(--sombra-interna);
+    transform: translateY(1px);
+}
+
+/* ---------- Grade dos modos ---------- */
+
+.grade-modos {
+    width: 100%;
+    max-width: 1450px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 30px;
+
+    padding: 15px 5px 35px;
+}
+
+/* ---------- Cards individuais ---------- */
+
+.grade-modos > div {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 20px;
+
+    background: var(--superficie);
+
+    border-radius: var(--raio-card);
+
+    box-shadow: var(--sombra-card);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.grade-modos > div:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        12px 12px 22px var(--sombra-escura),
+        -12px -12px 22px var(--sombra-clara);
+}
+
+/* ---------- Imagens ---------- */
+
+.grade-modos img {
+    width: 100%;
+    height: 165px;
+
+    object-fit: cover;
+
+    border-radius: 17px;
+
+    margin-bottom: 18px;
+
+    box-shadow:
+        4px 4px 8px rgba(130, 145, 180, 0.25),
+        -3px -3px 7px rgba(255, 255, 255, 0.6);
+}
+
+/* ---------- Títulos dos cards ---------- */
+
+.grade-modos h2 {
+    width: 100%;
+    min-height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    text-align: center;
+
+    font-family: "Fredoka", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+
+    color: var(--texto);
+}
+
+/* ---------- Botões dos cards ---------- */
+
+.grade-modos button {
+    width: 100%;
+    min-height: 44px;
+
+    padding: 10px 15px;
+
+    border: none;
+    border-radius: var(--raio-botao);
+
+    font-family: "Nunito", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* Botão iniciar */
+
+.grade-modos .iniciar {
+    background: var(--azul);
+    color: white;
+
+    box-shadow:
+        4px 4px 8px rgba(130, 145, 180, 0.45),
+        -3px -3px 7px rgba(255, 255, 255, 0.65);
+}
+
+.grade-modos .iniciar:hover {
+    background: var(--azul-escuro);
+    transform: translateY(-2px);
+}
+
+.grade-modos .iniciar:active {
+    transform: translateY(1px);
+    box-shadow: var(--sombra-interna);
+}
+
+/* Botão ranking */
+
+.grade-modos .ranking {
+    margin-top: 12px;
+
+    background: var(--superficie);
+    color: var(--azul);
+
+    box-shadow:
+        4px 4px 8px var(--sombra-escura),
+        -4px -4px 8px var(--sombra-clara);
+}
+
+.grade-modos .ranking:hover {
+    color: var(--azul-escuro);
+    transform: translateY(-2px);
+}
+
+.grade-modos .ranking:active {
+    box-shadow: var(--sombra-interna);
+    transform: translateY(1px);
+}
+
+/* ---------- Rodapé ---------- */
+
+footer {
+    width: 100%;
+    margin-top: auto;
+    padding-top: 35px;
+
+    text-align: center;
+
+    color: var(--texto-secundario);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+/* =========================================
+   MODAL DE CONFIGURAÇÃO
+   ========================================= */
+
+.fundo-configuracao {
+    position: fixed;
+    inset: 0;
+
+    z-index: 1000;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(48, 59, 80, 0.35);
+    backdrop-filter: blur(6px);
+}
+
+/* ---------- Card de configuração ---------- */
+
+.card-configuracao {
+    position: relative;
+
+    width: 100%;
+    max-width: 440px;
+
+    padding: 40px 30px 30px;
+
+    background: var(--superficie);
+
+    border-radius: var(--raio-card);
+
+    box-shadow:
+        15px 15px 30px rgba(48, 59, 80, 0.2),
+        -8px -8px 20px rgba(255, 255, 255, 0.7);
+
+    animation: aparecer 0.25s ease;
+}
+
+/* ---------- Animação ---------- */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ---------- Botão fechar ---------- */
+
+.fechar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    width: 36px;
+    height: 36px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: var(--superficie);
+    color: var(--texto-secundario);
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: var(--sombra-card);
+
+    transition: 0.2s ease;
+}
+
+.fechar:hover {
+    color: #e45e6b;
+    transform: rotate(90deg);
+}
+
+/* ---------- Textos do modal ---------- */
+
+.card-configuracao h2 {
+    margin-bottom: 8px;
+
+    text-align: center;
+
+    font-family: "Fredoka", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+
+    color: var(--texto);
+}
+
+.card-configuracao p {
+    margin-bottom: 25px;
+
+    text-align: center;
+
+    color: var(--texto-secundario);
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+/* ---------- Opções de rodadas ---------- */
+
+.opcoes-rodadas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 13px;
+
+    margin-bottom: 25px;
+}
+
+.rodada {
+    min-height: 48px;
+
+    padding: 10px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: var(--superficie);
+    color: var(--texto);
+
+    font-family: "Nunito", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        4px 4px 8px var(--sombra-escura),
+        -4px -4px 8px var(--sombra-clara);
+
+    transition: 0.2s ease;
+}
+
+.rodada:hover {
+    color: var(--azul);
+    transform: translateY(-2px);
+}
+
+/* Rodada selecionada */
+
+.rodada.selecionada {
+    background: var(--azul);
+    color: white;
+
+    box-shadow:
+        inset 3px 3px 6px rgba(40, 60, 120, 0.2),
+        inset -2px -2px 5px rgba(255, 255, 255, 0.15);
+}
+
+/* ---------- Botão começar ---------- */
+
+#comecar {
+    width: 100%;
+    min-height: 50px;
+
+    padding: 13px 20px;
+
+    border: none;
+    border-radius: var(--raio-botao);
+
+    background: var(--azul);
+    color: white;
+
+    font-family: "Nunito", sans-serif;
+    font-size: 1rem;
+    font-weight: 900;
+
+    cursor: pointer;
+
+    box-shadow:
+        4px 4px 8px rgba(130, 145, 180, 0.45),
+        -3px -3px 7px rgba(255, 255, 255, 0.65);
+
+    transition: 0.2s ease;
+}
+
+#comecar:hover {
+    background: var(--azul-escuro);
+    transform: translateY(-2px);
+}
+
+#comecar:active {
+    transform: translateY(1px);
+    box-shadow: var(--sombra-interna);
+}
+
+/* =========================================
+   ACESSIBILIDADE
+   ========================================= */
+
+button:focus-visible {
+    outline: 3px solid var(--azul-claro);
+    outline-offset: 4px;
+}
+
+/* =========================================
+   RESPONSIVIDADE
+   ========================================= */
+
+/* Tablets */
+
+@media (max-width: 1100px) {
+    .grade-modos {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 25px;
+    }
+
+    .grade-modos img {
+        height: 150px;
+    }
+}
+
+/* Tablets menores */
+
+@media (max-width: 800px) {
+    body {
+        padding: 25px;
+    }
+
+    .grade-modos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    header {
+        margin-bottom: 35px;
+    }
+
+    .grade-modos img {
+        height: 155px;
+    }
+}
+
+/* Celulares */
+
+@media (max-width: 520px) {
+    body {
+        padding: 20px 16px;
+    }
+
+    header {
+        justify-content: flex-end;
+        margin-bottom: 30px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+        letter-spacing: 3px;
+    }
+
+    .voltar {
+        padding: 9px 12px;
+        font-size: 0.85rem;
+    }
+
+    .grade-modos {
+        grid-template-columns: 1fr;
+        gap: 25px;
+
+        max-width: 360px;
+    }
+
+    .grade-modos > div {
+        padding: 18px;
+    }
+
+    .grade-modos img {
+        height: 185px;
+    }
+
+    .grade-modos h2 {
+        min-height: auto;
+        font-size: 1.3rem;
+    }
+
+    .card-configuracao {
+        padding: 40px 22px 25px;
+    }
+}
+
+/* Telas muito pequenas */
+
+@media (max-width: 350px) {
+    .opcoes-rodadas {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 1.7rem;
+    }
+}
+
+/* Movimento reduzido */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
